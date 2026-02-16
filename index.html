@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Stack+Sans+Headline:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: hsl(250 83% 3%);
+            --bg: hsl(252 56% 7%);
+            --bg-light: hsl(250 35% 11%);
+            --text: hsl(247 100% 100%);
+            --text-muted: hsl(247 48% 77%);
+            --highlight: hsl(249 22% 46%);
+            --border: hsl(250 28% 34%);
+            --border-muted: hsl(252 38% 23%);
+            --primary: hsl(248 66% 79%);
+            --secondary: hsl(62 35% 57%);
+            --danger: hsl(9 42% 65%);
+            --warning: hsl(51 29% 53%);
+            --success: hsl(148 27% 56%);
+            --info: hsl(217 46% 66%);
+            --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+            --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+            --border-card: solid 1px var(--border);
+            --shadow-l: inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
+    /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
+        }
+
+        .darkmode {
+            --bg-dark: hsl(246 95% 94%);
+            --bg: hsl(246 100% 99%);
+            --bg-light: hsl(246 100% 100%);
+            --text: hsl(258 95% 8%);
+            --text-muted: hsl(250 28% 34%);
+            --highlight: hsl(0 0% 100%);
+            --border: hsl(248 24% 57%);
+            --border-muted: hsl(248 36% 70%);
+            --primary: hsl(252 34% 36%);
+            --secondary: hsl(60 100% 11%);
+            --danger: hsl(8 32% 41%);
+            --warning: hsl(51 46% 30%);
+            --success: hsl(150 37% 33%);
+            --info: hsl(217 34% 43%);
+            --gradient: linear-gradient(0deg, var(--bg) 99%, var(--bg-light));
+            --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+            --border-card: solid 1px var(--border);
+            --shadow-l: inset 0 1px 2px #ffffff70, /* top highlight */ 0 4px 6px #00000030,
+    /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
+        }
+
+        #theme-switch {
+            height: 50px;
+            width: 50px;
+            padding: 0;
+            border-radius: 50%;
+            background-color: var(--bg);
+            color: var(--text);
+            position: absolute;
+            cursor: pointer;
+            outline: none;
+        }
+        #theme-switch:hover {
+            background: var(--text);
+            color: var(--bg);
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        body {
+            background: var(--bg-dark);
+            width: 100vw;
+            height: 200vh;
+            display: flex;
+            gap: 50px;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding: 40px;
+            width: auto;
+            height: auto;
+            background: var(--gradient);
+            border-radius: 50px;
+            border-top: solid 1px var(--highlight);
+            border: solid 1px var(--border);
+            box-shadow: var(--shadow-l);
+        }
+
+        .container:hover {
+            background: var(--gradient-hover);
+        }
+
+        .zmiany {
+            padding: 40px;
+            width: auto;
+            height: auto;
+            background: var(--gradient);
+            border-radius: 50px;
+            border-top: solid 1px var(--highlight);
+            border: solid 1px var(--border);
+            box-shadow: var(--shadow-l);
+        }
+
+        .zmiany:hover {
+            background: var(--gradient-hover);
+        }
+
+        .Gry {
+            padding: 40px;
+            width: auto;
+            height: auto;
+            background: var(--gradient);
+            border-radius: 50px;
+            border-top: solid 1px var(--highlight);
+            border: solid 1px var(--border);
+            box-shadow: var(--shadow-l);
+        }
+
+        .Gry:hover {
+            background: var(--gradient-hover);
+        }
+
+        .M {
+            padding: 40px;
+            width: auto;
+            height: auto;
+            background: var(--bg-light);
+            border-radius: 50px;
+            border-top: solid 1px var(--highlight);
+            border: solid 1px var(--border);
+        }
+
+        .YT button {
+            outline: none;
+            border: none;
+            border-radius: 50px;
+            width: 150px;
+            height: 50px;
+            background-color: #dd0000;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: "Momo Trust Display", sans-serif;
+        }
+        
+        .YT button:hover {
+            background: var(--primary);
+            color: var(--text);
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        .DC button {
+            outline: none;
+            border: none;
+            border-radius: 50px;
+            width: 150px;
+            height: 50px;
+            background-color: #006dcc;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: "Momo Trust Display", sans-serif;
+        }
+
+        .DC button:hover {
+            background: var(--primary);
+            color: var(--text);
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        .Ml {
+            padding: 40px;
+            width: auto;
+            height: auto;
+            background: var(--bg-light);
+            border-radius: 50px;
+            border-top: solid 1px var(--highlight);
+            border: solid 1px var(--border);
+        }
+
+        .M h3 {
+            color: rgb(47, 168, 47);
+            font-family: "Momo Trust Display", sans-serif;
+            font-size: 30px;
+        }
+
+        .Ml h3 {
+            color: rgb(0, 140, 226);
+            font-family: "Momo Trust Display", sans-serif;
+            font-size: 30px;
+        }
+
+        .HkS h3 {
+            color: var(--text);
+            font-family: "Momo Trust Display", sans-serif;
+            font-size: 30px;
+        }
+
+        .HkS {
+            padding: 40px;
+            width: auto;
+            height: auto;
+            background: var(--bg-light);
+            border-radius: 50px;
+            border-top: solid 1px var(--highlight);
+            border: solid 1px var(--border);
+        }
+
+        h1 {
+            color: var(--text);
+            font-family: "Momo Trust Display", sans-serif;
+            text-align: center;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-family: "Stack Sans Headline", sans-serif;
+            font-size: 15px;
+        }
+
+        .container h3 {
+            color: rgb(107, 29, 180);
+            font-family: "Momo Trust Display", sans-serif;
+            font-size: 30px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: "Momo Trust Display", sans-serif;
+        }
+    </style>
+    <script type="text/javascript" src="darkmode.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <button id="theme-switch">M</button>
+        <h1>Portfolio</h1>
+        <br>
+        <p>O mnie:</p>
+        <h3>Galaxy51772</h3>
+        <p>Lubię sobie w coś pograć, chociażby minecraft. Lubię tą grę ponieważ jest w niej pełno przygody. Tak samo jak wyzwania.</p>
+        <div class="YT">
+        <a href="https://www.youtube.com/@Galaxy51772">
+            <button>Youtube</button>
+        </a>
+        </div>
+        <br>
+        <div class="DC">
+        <a href="https://discord.gg/w3CEQahFNt">
+            <button>Discord</button>
+        </a>
+        </div>
+    </div>
+    <br>
+    <div class="zmiany">
+        <h1>Zmiany</h1>
+        <p>Strona posiada swój nowy, i unikatowy wygląd w kodzie.</p>
+    </div>
+    <br>
+    <div class="Gry">
+        <h1>Gry w które gram:</h1>
+        <div class="M">
+            <h3>Minecraft</h3>
+            <p>Lubię tą grę ponieważ jest w niej dużo wyzwań i przygody.</p>
+        </div>
+        <br>
+        <div class="Ml">
+            <h3>Minecraft Legends</h3>
+            <p>Tą grę już raz przeszłem, jest bardzo ciekawa. Kto wie, może przejdę ją drugi raz?</p>
+        </div>
+        <br>
+        <div class="HkS">
+            <h3>Hollow Knight Silksong</h3>
+            <p>Nie przeszłem jeszcze tej gry, nie jestem świadom niebezpieczeństwa które na mnie później czeka.</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
