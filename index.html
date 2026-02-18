@@ -70,6 +70,22 @@
             transition: 1s;
         }
 
+        #theme-switch img {
+            fill: var(--text)
+        }
+
+        #theme-switch svg:last-child {
+            display: none;
+        }
+
+        .darkmode #theme-switch svg:first-child {
+            display: none;
+        }
+
+        .darkmode #theme-switch svg:last-child {
+            display: block;
+        }
+
         body {
             background: var(--bg-dark);
             width: 100vw;
@@ -245,7 +261,10 @@
 </head>
 <body>
     <div class="container">
-        <button id="theme-switch">M</button>
+        <button id="theme-switch">
+            <svg src="darkmode.svg" height="24px" width="24px">
+            <svg src="lightmode.svg" height="24px" width="24px">
+        </button>
         <h1>Portfolio</h1>
         <br>
         <p>O mnie:</p>
@@ -289,6 +308,7 @@
 </body>
 
 </html>
+
 
 
 
