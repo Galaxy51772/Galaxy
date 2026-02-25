@@ -30,6 +30,7 @@
     /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
             --shadow-s: inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
     /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
+            --transition: all 0.3s ease-in-out;
         }
 
         .darkmode {
@@ -54,6 +55,7 @@
     /* dark shadow */ 0 6px 10px #00000015; /* soft shadow */
             --shadow-s: inset 0 1px 2px #ffffff30, /* top highlight */ 0 1px 2px #00000030,
     /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
+            --transition: all 0.3s ease-in-out;
         }
 
         #theme-switch {
@@ -69,6 +71,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: var(--shadow-l);
+            transition: var(--transition);
         }
         #theme-switch:hover {
             background: var(--text);
@@ -96,7 +100,7 @@
         body {
             background: var(--bg-dark);
             width: 100vw;
-            height: 200vh;
+            height: auto;
             display: flex;
             gap: 50px;
             flex-direction: column;
@@ -135,6 +139,19 @@
         }
 
         .Gry {
+            background: var(--bg-light);
+            height: 350px;
+            width: auto;
+            border-radius: 50px;
+            border: solid 1px var(--border);
+            align-items: center;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            display: flex;
+            gap: 20px;
+        }
+
+        .GryText {
             padding: 40px;
             width: auto;
             height: auto;
@@ -145,18 +162,25 @@
             box-shadow: var(--shadow-s);
         }
 
-        .Gry:hover {
+        .GryText:hover {
             background: var(--gradient-hover);
         }
 
         .M {
             padding: 40px;
-            width: auto;
-            height: auto;
+            width: 300px;
+            height: 200px;
             background: var(--bg-light);
             border-radius: 50px;
             border-top: solid 1px var(--highlight);
             border: solid 1px var(--border);
+            box-shadow: var(--shadow-l);
+            transition: var(--transition);
+        }
+
+        .M:hover {
+            transform: translateY(-0.50rem);
+            transition: transform 0.3s ease-in-out;
         }
 
         .YT button {
@@ -167,17 +191,19 @@
             height: 50px;
             background-color: #dd0000;
             cursor: pointer;
-            color: #fff;
+            color: white;
             text-decoration: none;
             font-size: 15px;
             font-family: "Momo Trust Display", sans-serif;
+            box-shadow: var(--shadow-l);
+            transition: var(--transition);
         }
         
         .YT button:hover {
             background: var(--primary);
             color: var(--text);
             transform: scale(1.1);
-            transition: 1s;
+            transition: 0.7s;
         }
 
         .DC button {
@@ -192,23 +218,32 @@
             text-decoration: none;
             font-size: 15px;
             font-family: "Momo Trust Display", sans-serif;
+            box-shadow: var(--shadow-l);
+            transition: var(--transition);
         }
 
         .DC button:hover {
             background: var(--primary);
             color: var(--text);
             transform: scale(1.1);
-            transition: 1s;
+            transition: 0.7s;
         }
 
         .Ml {
             padding: 40px;
-            width: auto;
-            height: auto;
+            width: 300px;
+            height: 200px;
             background: var(--bg-light);
             border-radius: 50px;
             border-top: solid 1px var(--highlight);
             border: solid 1px var(--border);
+            box-shadow: var(--shadow-l);
+            transition: var(--transition);
+        }
+
+        .Ml:hover {
+            transform: translateY(-0.50rem);
+            transition: transform 0.3s ease-in-out;   
         }
 
         .M h3 {
@@ -231,12 +266,19 @@
 
         .HkS {
             padding: 40px;
-            width: auto;
-            height: auto;
+            width: 300px;
+            height: 200px;
             background: var(--bg-light);
             border-radius: 50px;
             border-top: solid 1px var(--highlight);
             border: solid 1px var(--border);
+            box-shadow: var(--shadow-l);
+            transition: var(--transition);
+        }
+
+        .HkS:hover {
+            transform: translateY(-0.50rem);
+            transition: transform 0.3s ease-in-out;
         }
 
         h1 {
@@ -263,6 +305,30 @@
             font-size: 15px;
             font-family: "Momo Trust Display", sans-serif;
         }
+
+        .przyciski {
+            height: 75px;
+            padding-left: 1rem;
+            align-items: center;
+            text-align: center;
+            width: 332px;
+            background: var(--bg-light);
+            display: flex;
+            gap: 15px;
+            border-radius: 50px;
+        }
+
+        @media (max-width: 900px) {
+            .Gry {
+                background: var(--bg-light);
+                height: auto;
+                width: auto;
+                border-radius: 50px;
+                border: solid 1px var(--border);
+                align-items: center;
+                padding: 2rem;
+            }
+        }
     </style>
     <script type="text/javascript" src="darkmode.js" defer></script>
 </head>
@@ -277,16 +343,17 @@
         <p>O mnie:</p>
         <h3>Galaxy51772</h3>
         <p>Lubię sobie w coś pograć, chociażby minecraft. Lubię tą grę ponieważ jest w niej pełno przygody. Tak samo jak wyzwania.</p>
-        <div class="YT">
-        <a href="https://www.youtube.com/@Galaxy51772">
+        <div class="przyciski">
+            <div class="YT">
+            <a href="https://www.youtube.com/@Galaxy51772">
             <button>Youtube</button>
-        </a>
-        </div>
-        <br>
-        <div class="DC">
-        <a href="https://discord.gg/w3CEQahFNt">
+            </a>
+            </div>
+            <div class="DC">
+            <a href="https://discord.gg/w3CEQahFNt">
             <button>Discord</button>
-        </a>
+            </a>
+            </div>
         </div>
     </div>
     <br>
@@ -295,8 +362,9 @@
         <p>Strona posiada swój nowy, i unikatowy wygląd w kodzie.</p>
     </div>
     <br>
-    <div class="Gry">
+    <div class="GryText">
         <h1>Gry w które gram:</h1>
+        <div class="Gry">
         <div class="M">
             <h3>Minecraft</h3>
             <p>Lubię tą grę ponieważ jest w niej dużo wyzwań i przygody.</p>
@@ -311,22 +379,8 @@
             <h3>Hollow Knight Silksong</h3>
             <p>Nie przeszłem jeszcze tej gry, nie jestem świadom niebezpieczeństwa które na mnie później czeka.</p>
         </div>
+        </div>
     </div>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
