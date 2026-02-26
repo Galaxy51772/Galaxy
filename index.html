@@ -149,6 +149,7 @@
             padding-right: 2rem;
             display: flex;
             gap: 20px;
+            flex-direction: row;
         }
 
         .GryText {
@@ -160,6 +161,7 @@
             border-top: solid 1px var(--highlight);
             border: solid 1px var(--border);
             box-shadow: var(--shadow-s);
+            align-items: center;
         }
 
         .GryText:hover {
@@ -313,22 +315,79 @@
             text-align: center;
             width: 332px;
             background: var(--bg-light);
-            display: flex;
             gap: 15px;
             border-radius: 50px;
+            display: flex;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 1200px) {
             .Gry {
-                background: var(--bg-light);
-                height: auto;
-                width: auto;
-                border-radius: 50px;
-                border: solid 1px var(--border);
-                align-items: center;
+                display: grid;
+                grid-auto-columns: 1fr;
+                grid-auto-rows: 1fr;
+                gap: 1em;
+                grid-template-areas:
+                "M Ml"
+                "HkS Ml";
+                height: 572px;
                 padding: 2rem;
+            }
+
+            .container {
+                align-items: center;
+                text-align: center;
+                align-content: center;
                 display: flex;
                 flex-direction: column;
+            }
+
+            .przyciski {
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                align-items: center;
+            }
+
+            .Ml {
+                height: 500px;
+            }
+
+            #theme-switch {
+                top: 45px;
+                left: 160px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .Gry {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                height: auto;
+            }
+
+            .container {
+                align-items: center;
+                text-align: center;
+                align-content: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .przyciski {
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                align-items: center;
+            }
+
+            .Ml {
+                height: 200px;
+            }
+
+            #theme-switch {
+                top: 45px;
+                left: 50px;
             }
         }
     </style>
@@ -367,17 +426,17 @@
     <div class="GryText">
         <h1>Gry w które gram:</h1>
         <div class="Gry">
-        <div class="M">
+        <div class="M" style="grid-area: M">
             <h3>Minecraft</h3>
             <p>Lubię tą grę ponieważ jest w niej dużo wyzwań i przygody.</p>
         </div>
         <br>
-        <div class="Ml">
+        <div class="Ml" style="grid-area: Ml">
             <h3>Minecraft Legends</h3>
             <p>Tą grę już raz przeszłem, jest bardzo ciekawa. Kto wie, może przejdę ją drugi raz?</p>
         </div>
         <br>
-        <div class="HkS">
+        <div class="HkS" style="grid-area: HkS">
             <h3>Hollow Knight Silksong</h3>
             <p>Nie przeszłem jeszcze tej gry, nie jestem świadom niebezpieczeństwa które na mnie później czeka.</p>
         </div>
