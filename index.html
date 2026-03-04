@@ -132,6 +132,9 @@
             border-top: solid 1px var(--highlight);
             border: solid 1px var(--border);
             box-shadow: var(--shadow-s);
+            animation: appear 5s ease-in-out;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
         }
 
         .zmiany:hover {
@@ -162,6 +165,9 @@
             border: solid 1px var(--border);
             box-shadow: var(--shadow-s);
             align-items: center;
+            animation: appear 5s ease-in-out;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
         }
 
         .GryText:hover {
@@ -320,6 +326,18 @@
             display: flex;
         }
 
+        @keyframes appear {
+            from{
+                opacity: 0;
+                scale: 0.5;
+            }
+
+            to{
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
         @media (max-width: 1500px) {
             .Gry {
                 display: grid;
@@ -445,4 +463,5 @@
 </body>
 
 </html>
+
 
