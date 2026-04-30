@@ -380,6 +380,9 @@
 
         @media (max-width: 800px) {
             .Gry {
+                background: none;
+                border: none;
+                border-top: none;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
@@ -404,6 +407,10 @@
                 height: 200px;
             }
             
+            .GryText {
+                padding: 0px;
+            }
+            
         }
         
         .Bar {
@@ -422,7 +429,7 @@
             border: solid 1px var(--border);
             backdrop-filter: blur(8px);
             border-top: solid 1px var(--highlight);
-            color: var(--text);
+            color: var(--text)
         }
         
         .Bar a {
