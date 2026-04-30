@@ -37,6 +37,7 @@
     /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
             --transition: all 0.3s ease-in-out;
             --bg-transparent: hsl(252 56% 7% 0.75)
+            --text1: white;
         }
 
         .darkmode {
@@ -63,6 +64,7 @@
     /* dark shadow */ 0 2px 4px #00000015; /* soft shadow */
             --transition: all 0.3s ease-in-out;
             --bg-transparent: hsl(246 100% 97% 0.75);
+            --text1: black;
         }
 
         #theme-switch {
@@ -88,7 +90,7 @@
         }
 
         #theme-switch svg {
-            fill: var(--text)
+            fill: var(--text);
         }
 
         #theme-switch svg:last-child {
@@ -429,12 +431,12 @@
             border: solid 1px var(--border);
             backdrop-filter: blur(8px);
             border-top: solid 1px var(--highlight);
-            color: var(--text);
+            color: var(--text1);
         }
         
         .Bar a {
             cursor: pointer;
-            color: var(--text);
+            color: var(--text1);
         }
     </style>
     <script type="text/javascript" src="darkmode.js" defer></script>
